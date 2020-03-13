@@ -1,0 +1,12 @@
+version: '3.6'
+
+services:
+        wp-cron:
+                image: "jjoshtech/wp-cron:latest"
+                container_name: "wp-cron"
+                hostname: "wp-cron"
+                environment:
+                  SERVER_ADDRESS: "localhost"
+                  PROTOCOL: "https"
+                  SLACK_HOOK: "https://localhost"
+                restart: "unless-stopped"
