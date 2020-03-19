@@ -1,7 +1,7 @@
-echo "$(date +%Y-%m-%d\ %H:%M) Cron Started" >> /dev/console
-curl -sX POST -H 'Content-type: application/json' --data '{"text":"Cron Started\n"}' $SLACK_HOOK >> /dev/stdout 2>&1
+echo "$(date +%Y-%m-%d\ %H:%M) Cron Started" >> /var/log/logfile 2>&1
+curl -sX POST -H 'Content-type: application/json' --data '{"text":"Cron Started\n"}' $SLACK_HOOK >> /var/log/logfile 2>&1
 
-curl https://jjosh.de/wp-cron.php >> /dev/console
+curl https://jjosh.de/wp-cron.php >> /var/log/logfile 2>&1
 
-echo "$(date +%Y-%m-%d\ %H:%M) Cron Finished" >> /dev/console
-curl -sX POST -H 'Content-type: application/json' --data '{"text":"Cron Finished\n"}' $SLACK_HOOK >> /dev/stdout 2>&1
+echo "$(date +%Y-%m-%d\ %H:%M) Cron Finished" >> /var/log/logfile 2>&1
+curl -sX POST -H 'Content-type: application/json' --data '{"text":"Cron Finished\n"}' $SLACK_HOOK >> /var/log/logfile 2>&1
