@@ -32,5 +32,11 @@ COPY startUp.sh /root/startUp.sh
 #Add Executable right to cronscript
 RUN chmod +x /root/startUp.sh
 
+#Add logfile
+RUN ln -s /dev/console /var/log/logfile
+
+#Change rights
+RUN chmod 666 /var/log/logfile
+
 # Start SSH Server in Debug mode
 CMD ["/root/startUp.sh"]
