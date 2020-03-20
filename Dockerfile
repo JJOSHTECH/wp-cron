@@ -33,7 +33,7 @@ COPY startUp.sh /root/startUp.sh
 RUN chmod +x /root/startUp.sh
 
 #Add logfile
-RUN ln -s /dev/console /var/log/logfile
+RUN ln -s /dev/stdout /var/log/logfile
 
 #Change rights
 RUN chmod 666 /var/log/logfile
