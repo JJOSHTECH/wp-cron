@@ -39,4 +39,6 @@ RUN ln -s /dev/stdout /var/log/logfile
 RUN chmod 666 /var/log/logfile
 
 # Start SSH Server in Debug mode
-CMD ["/root/startUp.sh"]
+ENTRYPOINT ["/root/startUp.sh"]
+
+CMD ["cron -f"]
