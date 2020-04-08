@@ -6,5 +6,3 @@ env >> /root/cacheJob
 
 cat /root/cronScript.sh >> /root/cacheJob
 cat /root/cacheJob > /root/cronScript.sh
-
-exec cron -f
